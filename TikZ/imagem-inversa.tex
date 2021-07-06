@@ -1,0 +1,25 @@
+\documentclass[tikz, border=1cm]{standalone}
+
+\begin{document}
+
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}[shorten <= -1cm]
+
+\draw (0,0) ellipse (3cm and 4cm) ;
+\draw (10,0) ellipse (3cm and 4cm);
+
+\node [scale=1.5] at (-3,4) {$A$};
+\node [scale=1.5] at (13,4) {$B$};
+
+\node [circle, draw, dashed, inner sep=.75cm] (A) at (2.5,-1.5) {};
+\node [circle, draw, dashed, inner sep=.75cm, label=below:$G$] (B) at (9,0) {};
+\node [circle, draw, dashed, inner sep=.75cm] (C) at (-.5,1) {};
+
+\path  (A) [bend left, {Latex[length=2mm]}-, thick] edge node [above] {$f^{-1}$} (B) ;
+\end{tikzpicture}
+
+% 
+\end{document}

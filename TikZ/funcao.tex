@@ -1,0 +1,22 @@
+\documentclass[tikz, border=1cm]{standalone}
+
+\begin{document}
+
+
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc}
+
+\begin{tikzpicture}
+
+\node (A) [scale=5] {$A$};
+
+\node (B) at (10,0) [scale=5] {$B$};
+
+\path (A) [bend left=2.5cm, {Latex[length=2mm]}-] edge node [above] {$f^{-1}$} node [below, align=center, text width=2cm] {traz abertos em abertos} (B) 
+	  (A) [bend left=1cm, {Latex[length=2mm]}-] edge node [above] {$f^{-1}$} node [below, align=center, text width=2cm] {traz abertos em fechados} (B)  	
+  	  (A) [bend right=1cm, -{Latex[length=2mm]}] edge node [below] {$f$} node [above, align=center, text width=2cm] {traz abertos em fechados} (B)
+  	  (A) [bend right=2.5cm, -{Latex[length=2mm]}] edge node [below] {$f$} node [above, align=center, text width=2cm] {traz abertos em fechados} (B);
+\end{tikzpicture}
+
+
+\end{document}
